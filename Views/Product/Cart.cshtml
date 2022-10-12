@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+
+<h3>
+    <a href="/Product/ShowProduct" class="btn btn-info">Product List</a> <a href="/Product/AddProduct" class="btn btn-info">Add Product</a>
+    <a href="/Product/Product" class="btn btn-info">Add to Cart</a> <a href="/Product/Orders" class="btn btn-info">Orders</a>
+    <a href="/Product/Cart" class="btn btn-info">Cart</a>
+
+</h3>
+<h3>Cart</h3>
+
+@if (Session["cart"] == null)
+{
+    <h3>Empty Cart</h3>
+
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Qty</td>
+                <td>@((p.Price * p.Qty).ToString())</td>
+            </tr>
+        }
+
+    </table>
+
+    <a href="/Product/ConfirmOrder" class="btn btn-info">Confirm Order</a>
+}
+
+

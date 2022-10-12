@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h3>
+    <a href="/Product/ShowProduct" class="btn btn-info">Product List</a> <a href="/Product/AddProduct" class="btn btn-info">Add Product</a>
+    <a href="/Product/Product" class="btn btn-info">Add to Cart</a> <a href="/Product/Orders" class="btn btn-info">Orders</a>
+    <a href="/Product/Cart" class="btn btn-info">Cart</a>
+
+</h3>
+<br />
+<h3>Edit Product</h3>
+
+<form action="" method="post">
+    <input type="number" class="form-control" name="Id" value="@Model.Id" readonly />
+    <input type="text" class="form-control" name="Name" value="@Model.Name" />
+    <input type="text" class="form-control" name="Price" value="@Model.Price" />
+    <input type="number" min="0" class="form-control" name="Qty" value="@Model.Qty" />
+    <input type="submit" value="EDIT PRODUCT" class="form-control" />
+</form>
